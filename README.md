@@ -62,7 +62,7 @@ python tune.py \
     --OUTPUT_DIR runs/best_configs/flat
 ```
 
-Tuning for all task-input-model trios is a time-consuming process. Here we release the best hyperparameter configuration for each setting in the folder `best_configs` hosted on [gdrive](https://drive.google.com/drive/folders/1N2TvQqC72V3rHuS55B00S2rVPKdX2lp3?usp=sharing). 
+Tuning for all task-input-model trios is a time-consuming process. Here we release the best hyperparameter configuration for each setting in the folder `best_configs` hosted on [gdrive](https://drive.google.com/drive/folders/1zth1kWeWz4FURz6r5ClP594o8uXSCBdF?usp=sharing). 
 
 ## 4. Training and evaluation
 
@@ -72,10 +72,10 @@ New models can be trained and evaluated using command like:
 python run.py --do_train --do_eval --TASK los --INPUT_TYPE dedupCont --MODEL_TYPE hier
 ```
 
-We also release the best checkpoints we used to report results for each experiment in our paper, which can be found in `ckpt` on [gdrive](https://drive.google.com/drive/folders/1N2TvQqC72V3rHuS55B00S2rVPKdX2lp3?usp=sharing). Then can be used for evaluation by running command like:
+We also release the best checkpoints we used to report results for each experiment in our paper, which can be found in `ckpt` on [gdrive](https://drive.google.com/drive/folders/1zth1kWeWz4FURz6r5ClP594o8uXSCBdF?usp=sharing). Then can be used for evaluation by running command like:
 
 ```sh
-python run.py --do_eval --TASK mort --INPUT_TYPE original --MODEL_TYPE hier --from_ckpt MODEL/hier_cnn/mort_nodedup_hier_1000doc40_0.852/ 
+python run.py --do_eval --TASK mort --INPUT_TYPE original --MODEL_TYPE hier --from_ckpt ckpt/full-hier-cnn/mort_nodedup_hier_1000doc40_0.852/ 
 ```
 
 
