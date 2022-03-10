@@ -72,10 +72,19 @@ New models can be trained and evaluated using command like:
 python run.py --do_train --do_eval --TASK los --INPUT_TYPE dedupCont --MODEL_TYPE hier
 ```
 
+
+
 We also release the best checkpoints we used to report results for each experiment in our paper, which can be found in `ckpt` on [gdrive](https://drive.google.com/drive/folders/1zth1kWeWz4FURz6r5ClP594o8uXSCBdF?usp=sharing). Then can be used for evaluation by running command like:
 
 ```sh
-python run.py --do_eval --TASK mort --INPUT_TYPE original --MODEL_TYPE hier --from_ckpt ckpt/full-hier-cnn/mort_nodedup_hier_1000doc40_0.852/ 
+# input: original; task: mortality; model: full context
+python run.py --do_eval --TASK mort --INPUT_TYPE original --MODEL_TYPE hier --from_ckpt ckpt/full-hier-cnn/mort_nodedup_hier_1000doc40_0.852/
+
+# input: dedupCont; task: drg; model: medium context
+python run.py --do_eval --TASK drg --INPUT_TYPE dedupCont --MODEL_TYPE w2v --from_ckpt ckpt/medium-flat-cnn/drg_lineset_w2v_2500_0.359/
+
+# input: dedupNote; task: readm; model: short context
+python run.py --do_eval --TASK readm --INPUT_TYPE dedupNote --MODEL_TYPE bert --from_ckpt ckpt/short-bert/readm_jnote05_bert_2500_0.629/
 ```
 
 
